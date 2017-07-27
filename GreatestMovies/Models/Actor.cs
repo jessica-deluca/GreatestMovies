@@ -16,10 +16,6 @@ namespace GreatestMovies.Models
         public string Nationality { get; set; }
         public string Gender { get; set; }
 
-        [ForeignKey("Movie")]
-        public int MovieID { get; set; }
-        public virtual Movie Movie { get; set; }
-
         public virtual ICollection<Movie> Movies { get; set; }
     }
 }

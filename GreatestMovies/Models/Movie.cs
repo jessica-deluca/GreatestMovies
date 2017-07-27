@@ -20,9 +20,5 @@ namespace GreatestMovies.Models
         public virtual Genre Genre { get; set; }
 
         public virtual ICollection<Actor> Actors { get; set; }
-
-        [ForeignKey("Actor")]
-        public int ActorID { get; set; }
-        public virtual Actor Actor { get; set; }
     }
 }
