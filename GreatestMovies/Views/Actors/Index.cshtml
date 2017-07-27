@@ -4,11 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h1 id="actorPageNameText">ACTORS</h1>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+<p class="createNewButton">
+    @Html.ActionLink("Create New", "Create", null, new { @class = "hyperLink" })
 </p>
+
 @*<table class="table">
     <tr>
         <th>
@@ -24,24 +25,42 @@
             @Html.DisplayNameFor(model => model.Gender)
         </th>
         <th></th>
-    </tr>*@
-</table>
+    </tr>
+</table>*@
     <div class="row">
         @foreach (var item in Model)
         {
             <div class="col-md-4">
-                <h1>
-                    Actor's Name: @Html.DisplayFor(modelItem => item.ActorName)
-                </h1>
-                <h4>
-                    This actor was born on: @Html.DisplayFor(modelItem => item.DOB)
+
+                <div class="actorBackground">
+                        <h1 id="actorHeaderText">
+                            @Html.DisplayFor(modelItem => item.ActorName)
+                        </h1>
+                 </div>
+
+                <h4 id="actorSubText" style="color: #C519D4;">
+                    Born on:
                 </h4>
-                <h4>
-                    This actor's nationality is: @Html.DisplayFor(modelItem => item.Nationality)
+
+                <h4 id="actorSubText">
+                    @Html.DisplayFor(modelItem => item.DOB)
                 </h4>
-                <h6>
-                    Gender: @Html.DisplayFor(modelItem => item.Gender)
-                </h6>
+
+                <h4 id="actorSubText" style="color: #C519D4;">
+                    Nationality:
+                </h4>
+
+                <h4 id="actorSubText">
+                    @Html.DisplayFor(modelItem => item.Nationality)
+                </h4>
+
+                <h4 id="actorSubText" style="color: #C519D4;">
+                    Gender:
+                </h4>
+
+                <h4 id="actorSubText">
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </h4>
                 <p>
                     @Html.ActionLink("Edit", "Edit", new { id = item.ActorID }) |
                     @Html.ActionLink("Details", "Details", new { id = item.ActorID }) |
